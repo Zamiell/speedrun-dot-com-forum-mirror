@@ -149,17 +149,19 @@ func checkGameTableRow(tableRow soup.Root, gameTitle string, initialRun bool) {
 		return
 	}
 
-	if oldNumReplies, ok := threadMap[link]; !ok {
-		// This is a new link; keep track of it in the map
-		threadMap[link] = numReplies
+	// Get the old value from the map
+	oldNumReplies, ok := threadMap[link]
 
-		if !initialRun {
-			msg := formatMsg(true, gameTitle, threadTitle, username)
-			discordSend(discordOutputChannelID, msg)
-		}
-	} else if numReplies != oldNumReplies {
+	// Update the map
+	threadMap[link] = numReplies
+
+	if ok && numReplies != oldNumReplies {
 		// This is a previously-seen link and the number of replies has changed
 		msg := formatMsg(false, gameTitle, threadTitle, username)
+		discordSend(discordOutputChannelID, msg)
+	} else if !ok && !initialRun {
+		// This is a new link since we have last scanned
+		msg := formatMsg(true, gameTitle, threadTitle, username)
 		discordSend(discordOutputChannelID, msg)
 	}
 }
