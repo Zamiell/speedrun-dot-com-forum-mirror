@@ -16,13 +16,11 @@ const (
 var (
 	// Key is the short-hand game URL, value is the full game title.
 	gameMap = map[string]string{
-		/*
-			"isaac":          "Wrath of the Lamb",
-			"isaacrebirth":   "Rebirth",
-			"afterbirth":     "Afterbirth",
-			"afterbirthplus": "Afterbirth+",
-		*/
-		"repentance": "Repentance",
+		"isaac":          "Wrath of the Lamb",
+		"isaacrebirth":   "Rebirth",
+		"afterbirth":     "Afterbirth",
+		"afterbirthplus": "Afterbirth+",
+		"repentance":     "Repentance",
 	}
 
 	// Key is the forum link, value is the number of replies.
