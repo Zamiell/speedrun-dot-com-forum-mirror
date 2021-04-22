@@ -1,9 +1,15 @@
-# ----------------------
+# -------------------------
 # speedrun-forum-to-discord
-# ----------------------
+# -------------------------
+
+# Binary
+speedrun-forum-to-discord
 
 # Secrets
 .env
+
+# Logs
+/logs
 
 # ------------------
 # GitHub Go Template
