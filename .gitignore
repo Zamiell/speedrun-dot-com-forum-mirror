@@ -8,9 +8,6 @@ speedrun-forum-to-discord
 # Secrets
 .env
 
-# Logs
-/logs
-
 # ------------------
 # GitHub Go Template
 # https://github.com/github/gitignore/blob/master/Go.gitignore
