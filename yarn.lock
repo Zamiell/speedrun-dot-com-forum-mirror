@@ -3781,7 +3781,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gaxios@npm:^6.0.0, gaxios@npm:^6.0.3":
+"gaxios@npm:^6.0.0, gaxios@npm:^6.0.3, gaxios@npm:^6.1.1":
   version: 6.1.1
   resolution: "gaxios@npm:6.1.1"
   dependencies:
@@ -3978,7 +3978,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-auth-library@npm:^9.0.0":
+"google-auth-library@npm:^9.0.0, google-auth-library@npm:^9.2.0":
   version: 9.2.0
   resolution: "google-auth-library@npm:9.2.0"
   dependencies:
@@ -7108,6 +7108,8 @@ __metadata:
     "@types/node": "npm:^20.10.0"
     discord.js: "npm:^14.14.1"
     dotenv: "npm:^16.3.1"
+    gaxios: "npm:^6.1.1"
+    google-auth-library: "npm:^9.2.0"
     googleapis: "npm:^128.0.0"
     isaacscript: "npm:^3.23.2"
     isaacscript-common-node: "npm:^1.3.0"
