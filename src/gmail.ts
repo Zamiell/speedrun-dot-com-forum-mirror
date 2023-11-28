@@ -22,6 +22,7 @@ import path from "node:path";
 import { REPO_ROOT } from "./constants.js";
 import { discordSend } from "./discord.js";
 import { env } from "./env.js";
+import { logger } from "./logger.js";
 
 const SPEEDRUN_DOT_COM_EMAIL_FROM_HEADER =
   '"Speedrun.com" <noreply@speedrun.com>';
@@ -141,6 +142,8 @@ function setSavedCredentials(newCredentials: Credentials) {
 }
 
 export async function checkNewEmails(): Promise<void> {
+  logger.info("Checking for new emails...");
+
   if (gmailClient === undefined) {
     throw new Error(
       "Failed to check for new emails since the GMail client was not initialized.",
@@ -187,6 +190,8 @@ async function processNewEmailID(
   id: string,
   timeThreshold: number,
 ) {
+  logger.info(`Processing new email with ID: ${id}`);
+
   const message = await client.users.messages.get({
     userId: "me",
     id,
