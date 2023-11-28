@@ -51,5 +51,6 @@ export async function discordSend(msg: string): Promise<void> {
     "Failed to send a Discord message since the Discord channel was not initialized.",
   );
 
+  logger.info(`Sending message to Discord: ${msg}`);
   await channel.send(msg);
 }
