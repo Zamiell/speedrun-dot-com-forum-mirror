@@ -6,6 +6,10 @@
 .DS_Store
 thumbs.db
 
+# OAuth files
+token.json
+client_secret_*.json
+
 # ------------------------------
 # GitHub Node.gitignore template
 # https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore

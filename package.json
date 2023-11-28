@@ -29,10 +29,13 @@
     "update": "isaacscript update"
   },
   "dependencies": {
+    "@google-cloud/local-auth": "^3.0.0",
     "@t3-oss/env-core": "^0.7.1",
     "discord.js": "^14.14.1",
     "dotenv": "^16.3.1",
+    "googleapis": "^128.0.0",
     "isaacscript-common-node": "^1.2.0",
+    "isaacscript-common-ts": "^11.4.0",
     "pino": "^8.16.2",
     "zod": "^3.22.4"
   },
