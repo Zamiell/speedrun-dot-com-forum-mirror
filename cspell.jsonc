@@ -1,0 +1,37 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "files": ["**"],
+  "enableFiletypes": ["*"],
+  "enableGlobDot": true,
+  "useGitignore": true,
+  "ignorePaths": [
+    "*.mp3",
+    "*.pyc",
+    "*.svg",
+    ".git/**",
+    ".yarn/**",
+    "dist/**",
+    "node_modules/**",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock",
+    // @template-customization-start
+    "old/**",
+    // @template-customization-end
+  ],
+  "words": [
+    "autocrlf",
+    "corepack",
+    "dbaeumer",
+    "esbenp",
+    "isaacscript",
+    "knip",
+    "packagejson",
+    "pino",
+    "sarisia",
+    "speedrun",
+    "technote",
+    "Zamiell",
+  ],
+}
