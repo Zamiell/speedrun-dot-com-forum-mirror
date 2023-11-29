@@ -21,5 +21,18 @@ The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [D
 - Install dependencies:
   - `yarn install`
 - Copy ".env.example" to ".env" and fill in the values.
-- Run the server:
+- Run the server to test to see if it works:
   - `npm run start`
+
+## Install as a Service
+
+- Install [PM2](https://pm2.io/docs/runtime/guide/installation/):
+  - `npm install pm2 -g`
+- Make PM2 run at startup:
+  - `pm2 startup`
+- Compile the TypeScript code:
+  - `npm run build`
+- Add a new PM2 service:
+  `pm2 start "/root/speedrun-forum-to-discord/dist/main.js" --name "speedrun-forum-to-discord" --merge-logs --log="/root/speedrun-forum-to-discord/logs/speedrun-forum-to-discord.log"`
+- Save the PM2 service:
+  `pm2 save`
