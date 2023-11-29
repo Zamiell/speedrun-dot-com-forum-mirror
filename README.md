@@ -31,7 +31,7 @@ The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [D
   - `corepack enable`
 - Install dependencies:
   - `yarn install`
-- Put the "credentials.json" in the root of the repository directory.
+- Put the "credentials.json" from the pre-installation step in the root of the repository directory.
 - Run the script to generate a "token.json" file that contains your Gmail token:
   - `npm run generate-gmail-token` (this will cause a new tab to open in your web browser so that you can complete authentication)
 - Delete the "credentials.json" file, since it is no longer necessary.
@@ -47,7 +47,7 @@ The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [D
   - `pm2 startup`
 - Compile the TypeScript code:
   - `npm run build`
-- Add a new PM2 service:
-  `pm2 start "/root/speedrun-forum-to-discord/dist/main.js" --name "speedrun-forum-to-discord" --merge-logs --log="/root/speedrun-forum-to-discord/logs/speedrun-forum-to-discord.log"`
+- Add a new PM2 service (assuming you have the repository at "/root/speedrun-forum-to-discord"):
+  - `pm2 start "/root/speedrun-forum-to-discord/dist/main.js" --name "speedrun-forum-to-discord" --merge-logs --log="/root/speedrun-forum-to-discord/logs/speedrun-forum-to-discord.log"`
 - Save the PM2 service:
   `pm2 save`
