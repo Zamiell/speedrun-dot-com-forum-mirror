@@ -47,11 +47,20 @@ function getCredentials(): Record<string, unknown> {
     );
   }
 
+  const { web } = credentials;
+  if (!isObject(web)) {
+    fatalError(
+      `Failed to parse the "${CREDENTIALS_PATH}" file since the "web" sub-object was missing.`,
+    );
+  }
+
   // When downloading the JSON file from the Google Cloud console, it does not automatically come
-  // with a redirect URI in it, which is necessary for the next step. Automatically add it for
-  // convenience.
-  if (credentials["redirect_uris"] === undefined) {
-    credentials["redirect_uris"] = [DEFAULT_REDIRECT_URI]; // It has to be inside of an array.
+  // with a redirect URI in it, which is necessary for the next step. We need to write it back to
+  // the file so that the `authenticate` function reads it.
+  if (web["redirect_uris"] === undefined) {
+    web["redirect_uris"] = [DEFAULT_REDIRECT_URI]; // It has to be in an array.
+    const newCredentialsContent = JSON.stringify(credentials, undefined, 2);
+    writeFile(CREDENTIALS_PATH, newCredentialsContent);
   }
 
   return credentials;

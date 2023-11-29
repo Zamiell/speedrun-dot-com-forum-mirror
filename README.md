@@ -32,8 +32,9 @@ The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [D
 - Install dependencies:
   - `yarn install`
 - Put the "credentials.json" in the root of the repository directory.
-- Generate a "token.json" file that contains your Gmail token:
-  - `npm run generate-gmail-token`
+- Run the script to generate a "token.json" file that contains your Gmail token:
+  - `npm run generate-gmail-token` (this will cause a new tab to open in your web browser so that you can complete authentication)
+- Delete the "credentials.json" file, since it is no longer necessary.
 - Copy ".env.example" to ".env" and fill in the values.
 - Run the server to test to see if it works:
   - `npm run start`
