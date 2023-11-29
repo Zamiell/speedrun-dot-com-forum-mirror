@@ -32,7 +32,6 @@
   "dependencies": {
     "bufferutil": "^4.0.8",
     "discord.js": "^14.14.1",
-    "dotenv": "^16.3.1",
     "google-auth-library": "^9.2.0",
     "googleapis": "^128.0.0",
     "isaacscript-common-node": "^1.4.0",

@@ -7142,7 +7142,6 @@ __metadata:
     "@types/node": "npm:^20.10.0"
     bufferutil: "npm:^4.0.8"
     discord.js: "npm:^14.14.1"
-    dotenv: "npm:^16.3.1"
     gaxios: "npm:^6.1.1"
     google-auth-library: "npm:^9.2.0"
     googleapis: "npm:^128.0.0"
