@@ -6,7 +6,7 @@ await main();
 
 async function main() {
   await discordInit();
-  await gmailInit();
+  gmailInit();
 
   await checkNewEmails();
   // eslint-disable-next-line @typescript-eslint/no-misused-promises

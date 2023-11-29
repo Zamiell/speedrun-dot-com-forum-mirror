@@ -7,8 +7,8 @@
 thumbs.db
 
 # OAuth files
-token.json
 client_secret_*.json
+token.json
 
 # ------------------------------
 # GitHub Node.gitignore template

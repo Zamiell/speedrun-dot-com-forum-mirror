@@ -1,6 +1,5 @@
-import { authenticate } from "@google-cloud/local-auth";
 import type { GaxiosResponse } from "gaxios";
-import type { Credentials, OAuth2Client } from "google-auth-library";
+import type { OAuth2Client } from "google-auth-library";
 import type { gmail_v1 } from "googleapis";
 import { google } from "googleapis";
 import {
@@ -8,7 +7,6 @@ import {
   fatalError,
   isFile,
   readFile,
-  writeFile,
 } from "isaacscript-common-node";
 import {
   HOUR_IN_MILLISECONDS,
@@ -17,11 +15,9 @@ import {
   isObject,
   parseIntSafe,
 } from "isaacscript-common-ts";
-import fs from "node:fs";
 import path from "node:path";
 import { REPO_ROOT } from "./constants.js";
 import { discordSend } from "./discord.js";
-import { env } from "./env.js";
 import { logger } from "./logger.js";
 
 const SPEEDRUN_DOT_COM_EMAIL_FROM_HEADER =
@@ -35,44 +31,21 @@ const NOTIFICATION_LINE = "<p>You have a new notification:</p>";
  */
 const LINK_REGEX = /<a href="(.+)">(.+)<\/a>/;
 
-/** If modifying these scopes, delete the token JSON. */
-// eslint-disable-next-line isaacscript/require-capital-const-assertions, isaacscript/require-capital-read-only
-const SCOPES = ["https://www.googleapis.com/auth/gmail.readonly"];
-
 const TOKEN_PATH = path.join(REPO_ROOT, "token.json");
-const CREDENTIALS_PATH = path.join(REPO_ROOT, env.GMAIL_OAUTH_FILENAME);
 
 let gmailClient: gmail_v1.Gmail | undefined;
 const processedEmailIDs = new Set<string>();
 
-export async function gmailInit(): Promise<void> {
-  if (!isFile(CREDENTIALS_PATH)) {
-    fatalError(
-      `The "${CREDENTIALS_PATH}" file does not exist. Download the OAuth2 JSON file from Google and put it at this path.`,
-    );
-  }
-
-  const oAuth2Client = await getClient();
+export function gmailInit(): void {
+  const oAuth2Client = getOAuth2Client();
   gmailClient = google.gmail({ version: "v1", auth: oAuth2Client });
 }
 
-async function getClient() {
-  const savedCredentials = getSavedCredentials();
-  if (savedCredentials !== undefined) {
-    return savedCredentials;
-  }
-
-  const client = await authenticate({
-    scopes: SCOPES,
-    keyfilePath: CREDENTIALS_PATH, // cspell:ignore keyfile
-  });
-  setSavedCredentials(client.credentials);
-  return client;
-}
-
-function getSavedCredentials(): OAuth2Client | undefined {
-  if (!fs.existsSync(TOKEN_PATH)) {
-    return undefined;
+function getOAuth2Client(): OAuth2Client | undefined {
+  if (!isFile(TOKEN_PATH)) {
+    fatalError(
+      `The "${TOKEN_PATH}" file does not exist. Follow the steps in the README to create it.`,
+    );
   }
 
   const tokenContent = readFile(TOKEN_PATH);
@@ -84,61 +57,6 @@ function getSavedCredentials(): OAuth2Client | undefined {
   }
 
   return google.auth.fromJSON(token) as OAuth2Client;
-}
-
-function setSavedCredentials(newCredentials: Credentials) {
-  const credentialsContent = readFile(CREDENTIALS_PATH);
-  const credentials = JSON.parse(credentialsContent) as unknown;
-  if (!isObject(credentials)) {
-    throw new Error(
-      `Failed to parse the "${CREDENTIALS_PATH}" file since it was not an object.`,
-    );
-  }
-
-  const key = credentials["installed"] ?? credentials["web"] ?? undefined;
-  assertDefined(
-    key,
-    `The "installed" and "web" keys do not exist in the file: ${CREDENTIALS_PATH}`,
-  );
-
-  if (!isObject(key)) {
-    throw new Error(
-      `Failed to parse the "installed" or "web" key in the "${CREDENTIALS_PATH}" file.`,
-    );
-  }
-
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  const { client_id, client_secret } = key;
-
-  if (typeof client_id !== "string") {
-    throw new TypeError(
-      `Failed to parse the "client_id" field in the "${CREDENTIALS_PATH}" file.`,
-    );
-  }
-
-  if (typeof client_secret !== "string") {
-    throw new TypeError(
-      `Failed to parse the "client_secret" field in the "${CREDENTIALS_PATH}" file.`,
-    );
-  }
-
-  // eslint-disable-next-line @typescript-eslint/naming-convention
-  const { refresh_token } = newCredentials;
-
-  if (typeof refresh_token !== "string") {
-    throw new TypeError(
-      `Failed to parse the "refresh_token" field in the "${CREDENTIALS_PATH}" file.`,
-    );
-  }
-
-  const token = {
-    type: "authorized_user",
-    client_id,
-    client_secret,
-    refresh_token: newCredentials.refresh_token,
-  } as const;
-  const tokenContents = JSON.stringify(token, undefined, 2);
-  writeFile(TOKEN_PATH, tokenContents);
 }
 
 export async function checkNewEmails(): Promise<void> {

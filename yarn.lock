@@ -4642,7 +4642,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isaacscript-common-node@npm:^1.1.1, isaacscript-common-node@npm:^1.2.0":
+"isaacscript-common-node@npm:^1.1.1":
   version: 1.2.0
   resolution: "isaacscript-common-node@npm:1.2.0"
   dependencies:
@@ -4674,7 +4674,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isaacscript-common-ts@npm:^11.3.1, isaacscript-common-ts@npm:^11.4.0":
+"isaacscript-common-ts@npm:^11.3.1":
   version: 11.4.0
   resolution: "isaacscript-common-ts@npm:11.4.0"
   checksum: d5cac1a88bfe8b570fc45c076d9d898784bd5d20880637ea89532b04a3ea9535c0263cc5edcf15dae7363613d1ae8d66dc89476210777847822fc8e16739cdc0
@@ -4730,9 +4730,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"isaacscript@npm:^3.23.2":
-  version: 3.23.2
-  resolution: "isaacscript@npm:3.23.2"
+"isaacscript@npm:^3.24.0":
+  version: 3.24.0
+  resolution: "isaacscript@npm:3.24.0"
   dependencies:
     "@commander-js/extra-typings": "npm:^11.1.0"
     "@zamiell/sync-directory": "npm:^6.0.5"
@@ -4741,8 +4741,8 @@ __metadata:
     command-exists: "npm:^1.2.9"
     commander: "npm:^11.1.0"
     figlet: "npm:^1.7.0"
-    isaacscript-common-node: "npm:^1.2.0"
-    isaacscript-common-ts: "npm:^11.4.0"
+    isaacscript-common-node: "npm:^1.3.0"
+    isaacscript-common-ts: "npm:^11.6.0"
     jsonc-parser: "npm:^3.2.0"
     klaw-sync: "npm:^6.0.0"
     moment: "npm:^2.29.4"
@@ -4758,7 +4758,7 @@ __metadata:
       optional: true
   bin:
     isaacscript: dist/main.js
-  checksum: 419b27e8fe18c005e83b10b89bba2268267b68de745bf785e5f267bc36e03496019a164b23509fea38b440073e0a532c31b7d198874559ac287841a0a240ec5c
+  checksum: cc6e9796322341ee510032b329da1ffa322257e5855c7a71ee414e439ee1de23e8439535042fa0a219941457433cb3b837f9adc5ea2fe887bd7205c1b0745a27
   languageName: node
   linkType: hard
 
@@ -7111,7 +7111,7 @@ __metadata:
     gaxios: "npm:^6.1.1"
     google-auth-library: "npm:^9.2.0"
     googleapis: "npm:^128.0.0"
-    isaacscript: "npm:^3.23.2"
+    isaacscript: "npm:^3.24.0"
     isaacscript-common-node: "npm:^1.3.0"
     isaacscript-common-ts: "npm:^11.6.0"
     isaacscript-lint: "npm:^6.4.1"

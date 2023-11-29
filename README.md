@@ -4,10 +4,21 @@
 
 The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [Discord.js](https://discord.js.org/) library for Node.js.
 
-## Installation
+## Pre-Installation
 
 - Download and install [Git](https://git-scm.com/), if you do not have it already.
 - Download and install [Node.js](https://nodejs.org/en/), if you do not have it already.
+- Set up a new [Gmail](https://gmail.com/) account.
+- Set up a new [Speedrun.com](https://speedrun.com/) account using the new Gmail account.
+- Follow the game(s) that you want notifications for (by clicking on the heart button).
+- Go to your [notification settings](https://www.speedrun.com/users/Zamiel/settings/notifications) and turn on email notifications for:
+  - "Forum thread created in game you follow"
+  - "Forum post created in game you follow"
+- Ensure that all other email notifications are turned off.
+- Follow the steps in the [Node.js quick-start Gmail API documentation](https://developers.google.com/gmail/api/quickstart/nodejs). (But stop at the "Set up the sample" part, since that part is already contained in this repository.)
+
+## Installation
+
 - Clone the repository:
   - `cd [the path where you want the code to live]` (optional)
   - If you already have an SSH key pair and have the public key attached to your GitHub profile, then use the following command to clone the repository via SSH:
@@ -20,6 +31,8 @@ The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [D
   - `corepack enable`
 - Install dependencies:
   - `yarn install`
+- Generate a "token.json" file:
+  - `node foo`
 - Copy ".env.example" to ".env" and fill in the values.
 - Run the server to test to see if it works:
   - `npm run start`

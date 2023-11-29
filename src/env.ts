@@ -23,7 +23,6 @@ export const env = createEnv({
     DISCORD_TOKEN: z.string(),
     DISCORD_GUILD_ID: z.string(),
     DISCORD_OUTPUT_CHANNEL_ID: z.string(),
-    GMAIL_OAUTH_FILENAME: z.string(),
   },
 
   runtimeEnv: process.env,
