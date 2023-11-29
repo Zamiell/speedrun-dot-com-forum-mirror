@@ -50,4 +50,4 @@ The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [D
 - Add a new PM2 service (assuming you have the repository at "/root/speedrun-forum-to-discord"):
   - `pm2 start "/root/speedrun-forum-to-discord/dist/main.js" --name "speedrun-forum-to-discord" --merge-logs --log="/root/speedrun-forum-to-discord/logs/speedrun-forum-to-discord.log"`
 - Save the PM2 service:
-  `pm2 save`
+  - `pm2 save`
