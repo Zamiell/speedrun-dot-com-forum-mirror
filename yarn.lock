@@ -1333,19 +1333,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@t3-oss/env-core@npm:^0.7.1":
-  version: 0.7.1
-  resolution: "@t3-oss/env-core@npm:0.7.1"
-  peerDependencies:
-    typescript: ">=4.7.2"
-    zod: ^3.0.0
-  peerDependenciesMeta:
-    typescript:
-      optional: true
-  checksum: c5ecf883793f92fe2492573971a7f142406739e50cd5bc051935b9f67a54e1199f0ed6e75ce32a9c41374bc60e4d8be99b37f48857747848f1888120d509cb42
-  languageName: node
-  linkType: hard
-
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -7134,7 +7121,6 @@ __metadata:
   resolution: "speedrun-forum-to-discord@workspace:."
   dependencies:
     "@google-cloud/local-auth": "npm:^3.0.0"
-    "@t3-oss/env-core": "npm:^0.7.1"
     "@types/node": "npm:^20.10.0"
     bufferutil: "npm:^4.0.8"
     discord.js: "npm:^14.14.1"
