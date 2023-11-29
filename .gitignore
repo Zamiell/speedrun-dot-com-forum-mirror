@@ -6,8 +6,9 @@
 .DS_Store
 thumbs.db
 
-# OAuth files
+# Gmail OAuth files
 client_secret_*.json
+credentials.json
 token.json
 
 # ------------------------------

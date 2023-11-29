@@ -22,6 +22,7 @@
   ],
   "scripts": {
     "build": "tsx ./scripts/build.ts",
+    "generate-gmail-token": "tsx ./scripts/generateGmailToken.ts",
     "lint": "tsx ./scripts/lint.ts",
     "nuke": "isaacscript nuke",
     "publish": "isaacscript publish-ts",

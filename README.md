@@ -15,7 +15,7 @@ The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [D
   - "Forum thread created in game you follow"
   - "Forum post created in game you follow"
 - Ensure that all other email notifications are turned off.
-- Follow the steps in the [Node.js quick-start Gmail API documentation](https://developers.google.com/gmail/api/quickstart/nodejs). (But stop at the "Set up the sample" part, since that part is already contained in this repository.)
+- Follow the steps in the [Node.js quick-start Gmail API documentation](https://developers.google.com/gmail/api/quickstart/nodejs) until you have a "credentials.json" file. Stop at the "Install the client library" part, since the client library is already contained in this repository.
 
 ## Installation
 
@@ -31,8 +31,9 @@ The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [D
   - `corepack enable`
 - Install dependencies:
   - `yarn install`
-- Generate a "token.json" file:
-  - `node foo`
+- Put the "credentials.json" in the root of the repository directory.
+- Generate a "token.json" file that contains your Gmail token:
+  - `npm run generate-gmail-token`
 - Copy ".env.example" to ".env" and fill in the values.
 - Run the server to test to see if it works:
   - `npm run start`
