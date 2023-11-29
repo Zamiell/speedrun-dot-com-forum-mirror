@@ -1,9 +1,13 @@
 {
   "$schema": "https://unpkg.com/knip@3/schema-jsonc.json",
-  "ignore": [
-    ".eslintrc.cjs",
-    "prettier.config.mjs",
-    "scripts/generateGmailToken.js",
+  "ignore": [".eslintrc.cjs", "prettier.config.mjs"],
+  "ignoreDependencies": [
+    "isaacscript-lint",
+
+    // Discord.js optional dependencies
+    // https://discord.js.org/docs/packages/discord.js/main
+    "bufferutil",
+    "utf-8-validate",
+    "zlib-sync",
   ],
-  "ignoreDependencies": ["@google-cloud/local-auth", "isaacscript-lint"],
 }
