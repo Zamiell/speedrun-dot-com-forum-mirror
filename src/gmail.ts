@@ -146,7 +146,7 @@ export async function checkNewEmails(): Promise<void> {
 
   if (gmailClient === undefined) {
     throw new Error(
-      "Failed to check for new emails since the GMail client was not initialized.",
+      "Failed to check for new emails since the Gmail client was not initialized.",
     );
   }
 
