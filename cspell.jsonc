@@ -22,6 +22,7 @@
   ],
   "words": [
     "autocrlf",
+    "bufferutil",
     "corepack",
     "dbaeumer",
     "esbenp",

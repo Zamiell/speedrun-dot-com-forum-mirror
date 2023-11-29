@@ -30,7 +30,7 @@
     "update": "isaacscript update"
   },
   "dependencies": {
-    "@t3-oss/env-core": "^0.7.1",
+    "bufferutil": "^4.0.8",
     "discord.js": "^14.14.1",
     "dotenv": "^16.3.1",
     "google-auth-library": "^9.2.0",
@@ -38,6 +38,8 @@
     "isaacscript-common-node": "^1.3.0",
     "isaacscript-common-ts": "^11.6.0",
     "pino": "^8.16.2",
+    "utf-8-validate": "^6.0.3",
+    "zlib-sync": "^0.1.9",
     "zod": "^3.22.4"
   },
   "devDependencies": {
