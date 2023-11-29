@@ -1,8 +1,22 @@
 # speedrun-forum-to-discord
 
-`speedrun-forum-to-discord` is a bot that posts a notification in a [Discord](https://discord.com/) channel whenever there is a post made inside of a game's forum on [speedrun.com](speedrun.com).
+`speedrun-forum-to-discord` is a bot that posts a notification in a [Discord](https://discord.com/) channel whenever there is a post made inside of a game's forum on [speedrun.com](speedrun.com). It does this by utilizing the email notifications + the Gmail API.
 
-The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [Discord.js](https://discord.js.org/) library for Node.js.
+Since most video-game speedrunning communities have their own Discord servers, this functionality is useful to allow a game's community to easily follow new posts without having to have their own personal email accounts be spammed.
+
+The bot is written in [TypeScript](https://www.typescriptlang.org/) using the [Discord.js](https://discord.js.org/) library for Node.js and the [Google APIs client](https://github.com/googleapis/google-api-nodejs-client) for Node.js.
+
+## Methodology
+
+This section discusses how and why the bot was created.
+
+The usual way to construct a bot that gets new forum posts would be to use the corresponding forum API. However, Speedrun.com does not have a forum API, and there are also no plans to add one. (The API has not been updated since the website was acquired by [Elo Entertainment](https://www.elo.io/) on Oct 13, 2020, and there are even open pull requests dating back to 2018.) Thus, we have to resort to more inconvenient methods.
+
+In order to check for new posts, the next most straightforward method would be to perform [web-scraping](https://en.wikipedia.org/wiki/Web_scraping) on the forum URLs. However, for some reason, new forum posts do not appear for non-logged-in users until 30 minutes have passed. This makes the bot run on a 30 minute delay, which is not ideal. In order to work around that, we could log in as a fake user and then provide the bot with the corresponding web cookie. But then we would have to worry about cookie expiration, which is not ideal. And furthermore, a web-scraping bot on an N second timer is not very friendly to Speedrun.com itself.
+
+Luckily, there is a better solution. Speedrun.com offers an email notification feature where you can be emailed on certain events occurring, including any forum post on a game that you "follow". Thus, instead of a bot checking Speedrun.com directly, we can set up a bot to check an email address for new emails, and then echo the contents of those email messages into a Discord channel.
+
+This bot arbitrarily choses Gmail as the email provider, since they have an excellent API. However, in theory you could use any email provider you like for this purpose.
 
 ## Pre-Installation
 
