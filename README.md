@@ -36,9 +36,9 @@ This bot arbitrarily choses Gmail as the email provider, since they have an exce
 - Clone the repository:
   - `cd [the path where you want the code to live]` (optional)
   - If you already have an SSH key pair and have the public key attached to your GitHub profile, then use the following command to clone the repository via SSH:
-    - `git clone git@github.com:Zamiell/racing-plus.git`
+    - `git clone git@github.com:Zamiell/speedrun-forum-to-discord.git`
   - If you do not already have an SSH key pair, then use the following command to clone the repository via HTTPS:
-    - `git clone https://github.com/Zamiell/racing-plus.git`
+    - `git clone https://github.com/Zamiell/speedrun-forum-to-discord.git`
 - Enter the cloned repository:
   - `cd speedrun-forum-to-discord`
 - Install Yarn, if you have not done so already:
