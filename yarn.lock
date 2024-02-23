@@ -4140,7 +4140,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"google-auth-library@npm:^9.0.0, google-auth-library@npm:^9.2.0":
+"google-auth-library@npm:9.2.0, google-auth-library@npm:^9.0.0":
   version: 9.2.0
   resolution: "google-auth-library@npm:9.2.0"
   dependencies:
@@ -4168,13 +4168,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"googleapis@npm:^128.0.0":
-  version: 128.0.0
-  resolution: "googleapis@npm:128.0.0"
+"googleapis@npm:^133.0.0":
+  version: 133.0.0
+  resolution: "googleapis@npm:133.0.0"
   dependencies:
     google-auth-library: "npm:^9.0.0"
     googleapis-common: "npm:^7.0.0"
-  checksum: 5c6826d25d9d6c3bdbe3923022353e4ba86a7eb3787c352cea61558cff0f00a2b18d1ff83548dc1f6b9e9fe4b4fbad66dd2cb0a8b180311e33e83dfab2427008
+  checksum: c46f9971f189f8551006aab2d25a788de237dce1bfaf20ddd19c6b4cf891468b477a610ae86470065b7481df68874998ad09862ff4ccb623803bce42f0f4dea0
   languageName: node
   linkType: hard
 
@@ -7290,8 +7290,8 @@ __metadata:
     bufferutil: "npm:^4.0.8"
     discord.js: "npm:^14.14.1"
     gaxios: "npm:6.1.1"
-    google-auth-library: "npm:^9.2.0"
-    googleapis: "npm:^128.0.0"
+    google-auth-library: "npm:9.2.0"
+    googleapis: "npm:^133.0.0"
     isaacscript: "npm:^4.2.2"
     isaacscript-common-node: "npm:^3.0.1"
     isaacscript-common-ts: "npm:^16.1.0"

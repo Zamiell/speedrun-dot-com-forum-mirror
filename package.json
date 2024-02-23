@@ -32,8 +32,8 @@
   "dependencies": {
     "bufferutil": "^4.0.8",
     "discord.js": "^14.14.1",
-    "google-auth-library": "^9.2.0",
-    "googleapis": "^128.0.0",
+    "google-auth-library": "9.2.0",
+    "googleapis": "^133.0.0",
     "isaacscript-common-node": "^3.0.1",
     "isaacscript-common-ts": "^16.1.0",
     "pino": "^8.19.0",
