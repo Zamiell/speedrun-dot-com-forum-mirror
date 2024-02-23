@@ -34,22 +34,22 @@
     "discord.js": "^14.14.1",
     "google-auth-library": "^9.2.0",
     "googleapis": "^128.0.0",
-    "isaacscript-common-node": "^1.4.0",
-    "isaacscript-common-ts": "^11.6.0",
-    "pino": "^8.16.2",
+    "isaacscript-common-node": "^3.0.1",
+    "isaacscript-common-ts": "^16.1.0",
+    "pino": "^8.19.0",
     "utf-8-validate": "^6.0.3",
     "zlib-sync": "^0.1.9",
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@google-cloud/local-auth": "^3.0.0",
-    "@types/node": "^20.10.0",
-    "gaxios": "^6.1.1",
-    "isaacscript": "^3.25.0",
-    "isaacscript-lint": "^6.4.1",
+    "@google-cloud/local-auth": "^3.0.1",
+    "@types/node": "^20.11.20",
+    "gaxios": "6.1.1",
+    "isaacscript": "^4.2.2",
+    "isaacscript-lint": "^6.20.0",
     "isaacscript-tsconfig": "^5.0.0",
-    "tsx": "^4.6.0",
-    "typescript": "^5.3.2"
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
   },
   "packageManager": "yarn@4.0.2"
 }

@@ -9,6 +9,7 @@ import {
   readFile,
   writeFile,
 } from "isaacscript-common-node";
+import type { ReadonlyRecord } from "isaacscript-common-ts";
 import { assertDefined, isObject } from "isaacscript-common-ts";
 import path from "node:path";
 
@@ -76,7 +77,7 @@ async function getClient(): Promise<Auth.OAuth2Client> {
 }
 
 function setSavedCredentials(
-  credentials: Record<string, unknown>,
+  credentials: ReadonlyRecord<string, unknown>,
   client: Auth.OAuth2Client,
 ) {
   const key = credentials["installed"] ?? credentials["web"] ?? undefined;

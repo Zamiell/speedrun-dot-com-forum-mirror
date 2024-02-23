@@ -269,7 +269,7 @@ async function announceSpeedrunComEmail(id: string, emailContents: string) {
 }
 
 function getLineNumberThatIncludes(
-  lines: string[],
+  lines: readonly string[],
   matchingText: string,
 ): number | undefined {
   for (const [i, line] of lines.entries()) {
